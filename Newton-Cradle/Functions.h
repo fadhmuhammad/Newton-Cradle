@@ -7,7 +7,7 @@ public:
 	double posisi();
 	double velocity();
 	double periode();
-	double conservation();s
+	double conservation();
 };
 
 #endif // FUNCTIONS_H
