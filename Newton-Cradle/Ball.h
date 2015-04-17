@@ -10,8 +10,10 @@ class Ball : public Functions
 {
 public:
 	Ball();
-	void swing;
-	void collide;
+	void swing();
+	void collide();
+	double getMass();
+	double getVel();
 	~Ball();
 private:
 	double v;
