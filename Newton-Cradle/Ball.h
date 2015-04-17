@@ -1,6 +1,7 @@
 #ifndef BALL_H
 #define BALL_H
 
+#include <fstream>
 #include "Functions.h" // Base class: Functions
 
 namespace std
@@ -14,6 +15,7 @@ public:
 	void collide();
 	double getMass();
 	double getVel();
+	void print();
 	~Ball();
 private:
 	double v;
@@ -22,8 +24,10 @@ private:
 	double L;
 	double r;
 	double amp;
+	double pos;
 	double posX;
 	double posY;
+	ofstream fout;
 };
 
 }

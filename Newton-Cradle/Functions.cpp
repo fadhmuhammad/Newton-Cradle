@@ -7,7 +7,7 @@ double Functions::posisi(double pos, double amp, double w, double t){
 	pos = amp * sin(w*t);
 }
 
-double Functions::velocity(double w, double w, double L){
+double Functions::velocity(double w, double v, double L){
 	w = sqrt(g/L);
 	v = w*L;
 }
