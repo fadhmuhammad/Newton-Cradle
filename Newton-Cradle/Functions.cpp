@@ -12,10 +12,23 @@ double Functions::velocity(double w, double w, double L){
 	v = w*L;
 }
 
-double Functions::conservation(double m, double v){
-	double p, Ek;
+double Functions::conservation(double m1, double m2, double v1, double v2){
+	double p, Ek, massratio;
+	double v1_, v2_;
+	// m1*v1 + m2*v2 = m1*v1_ + m2*v2_;
+	// 0.5*m1*v1*v1 + 0.5*m2*v2*v2 = 0.5*m1*v1_*v1_ + 0.5*m2*v2_*v2_;
+	if (m1 == m2){
+		//v1 = v1_ + v2_;
+		//v1*v1 = (v1_*v1) + (v2_*v2_);
+		//v1_*v1_ + 2*v1_*v2_ + v2_*v2_ = v1_*v1_ + v2_*v2_;
+		//2*v1_*v2_;
+		if (v1 == 0)
+			v1_ = v2;
+		else if (v2 == 0)
+			v2_ = v1;
+	}
 }
 
-double Functions::periode(){
-	
+double Functions::periode(double T, double L){
+	T = 2*PI*sqrt(L/g)	;
 }
