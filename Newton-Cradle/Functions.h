@@ -4,10 +4,10 @@
 class Functions
 {
 public:
-	double posisi();
-	double velocity();
-	double periode();
-	double conservation();
+	double posisi(double, double, double, double);
+	double velocity(double, double, double);
+	double periode(double, double);
+	double conservation(double, double, double, double);
 };
 
 #endif // FUNCTIONS_H

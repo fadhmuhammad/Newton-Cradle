@@ -24,6 +24,7 @@ private:
 	double m;
 	double L;
 	double r;
+	double T;
 	double amp;
 	double pos;
 	double posX;

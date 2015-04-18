@@ -96,7 +96,5 @@
     <File Name="Functions.cpp"/>
     <File Name="Ball.h"/>
     <File Name="Ball.cpp"/>
-    <File Name="Coordinate.h"/>
-    <File Name="Coordinate.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

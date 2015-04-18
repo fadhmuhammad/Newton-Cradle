@@ -1,10 +1,10 @@
+#include <math.h>
 #include "Ball.h"
-#include "Coordinate.h"
 
 namespace std
 {
 
-Ball::Ball() : Coordinate()
+Ball::Ball()
 {
 	w = 0.0;
 	v = 0.0;
@@ -20,17 +20,36 @@ Ball::Ball() : Coordinate()
 	
 }
 
-void Ball::swing : UpdateGrid(){
+void Ball::swing()
+{
 	periode(T, L);
 	double t = 0.0;
 	while (t < T){
 		velocity(w, v, L);
 		posisi(pos, amp, w, t);
 		posX = L*cos(pos);
-		posY = L*sin(sin);
+		posY = L*sin(pos);
 	}
 }
 void Ball::print(){
+	
+}
+
+void Ball::collide()
+{
+	
+}
+
+double Ball::getMass()
+{
+	return m;
+}
+double Ball::getVel()
+{
+	return v;
+}
+double Ball::getPos()
+{
 	
 }
 Ball::~Ball()

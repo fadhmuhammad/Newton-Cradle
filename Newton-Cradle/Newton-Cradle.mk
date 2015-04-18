@@ -62,7 +62,7 @@ AS       := as
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Functions.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ball.cpp$(ObjectSuffix) $(IntermediateDirectory)/Coordinate.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Functions.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ball.cpp$(ObjectSuffix) 
 
 
 
@@ -112,14 +112,6 @@ $(IntermediateDirectory)/Ball.cpp$(DependSuffix): Ball.cpp
 
 $(IntermediateDirectory)/Ball.cpp$(PreprocessSuffix): Ball.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Ball.cpp$(PreprocessSuffix) "Ball.cpp"
-
-$(IntermediateDirectory)/Coordinate.cpp$(ObjectSuffix): Coordinate.cpp $(IntermediateDirectory)/Coordinate.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "D:/Documents/Newton-Cradle/Newton-Cradle/Coordinate.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Coordinate.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Coordinate.cpp$(DependSuffix): Coordinate.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Coordinate.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Coordinate.cpp$(DependSuffix) -MM "Coordinate.cpp"
-
-$(IntermediateDirectory)/Coordinate.cpp$(PreprocessSuffix): Coordinate.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Coordinate.cpp$(PreprocessSuffix) "Coordinate.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
