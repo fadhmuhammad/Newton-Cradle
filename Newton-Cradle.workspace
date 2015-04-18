@@ -8,5 +8,8 @@
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="Newton-Cradle" ConfigName="Release"/>
     </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Test" Selected="no">
+      <Project Name="Newton-Cradle" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

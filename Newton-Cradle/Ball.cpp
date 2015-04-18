@@ -9,7 +9,7 @@ namespace std
 Ball::Ball(double amp_)
 {
 	L = 5.0;
-	m = 0.0;
+	m = 1.0;
 	r = 0.0;
 	amp = amp_;
 	pos = 0.0;
@@ -19,7 +19,6 @@ Ball::Ball(double amp_)
 	w = velocityAng(L);
 	v = velocityLin(w, L);
 	T = periode(L);
-	
 }
 
 void Ball::swing()
@@ -30,15 +29,12 @@ void Ball::swing()
 	double t = 0.0;
 	while (t < T){
 		pos = posisi(amp, w, t);
-		posX = L*cos(pos);
-		posY = L*sin(pos);
-		cout << posX << "\t" << posY << endl;
-		fout << posX << "\t" << posY << endl;
+		posX = L*sin(pos);
+		posY = L*cos(pos);
+		cout << posX << "\t" << -posY << endl;
+		fout << posX << "\t" << -posY << endl;
 		t += 0.1;
 	}
-}
-void Ball::print(ofstream &fout){
-	fout << posX << "\t" << posY << endl;
 }
 
 void Ball::collide()

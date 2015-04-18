@@ -17,7 +17,6 @@ public:
 	double getMass();
 	double getVel();
 	double getPos();
-	void print(ofstream&);
 	~Ball();
 private:
 	double v;
@@ -30,6 +29,8 @@ private:
 	double pos;
 	double posX;
 	double posY;
+	int xGrid;
+
 };
 
 }
