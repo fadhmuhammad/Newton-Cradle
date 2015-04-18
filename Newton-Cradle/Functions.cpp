@@ -3,17 +3,20 @@
 #define g 9.8
 #define PI 3.14
 
-double Functions::posisi(double pos, double amp, double w, double t){
-	pos = amp * sin(w*t);
+double Functions::posisi(double amp, double w, double t){
+	return amp*sin(w*t);
 }
 
-double Functions::velocity(double w, double v, double L){
-	w = sqrt(g/L);
-	v = w*L;
+double Functions::velocityAng(double L){
+	return sqrt(g/L);
 }
 
-double Functions::conservation(double m1, double m2, double v1, double v2){
-	double p, Ek, massratio;
+double Functions::velocityLin(double w, double L){
+	return w*L;
+}
+
+void Functions::conservation(double m1, double m2, double v1, double v2){
+	//double p, Ek, massratio;
 	double v1_, v2_;
 	// m1*v1 + m2*v2 = m1*v1_ + m2*v2_;
 	// 0.5*m1*v1*v1 + 0.5*m2*v2*v2 = 0.5*m1*v1_*v1_ + 0.5*m2*v2_*v2_;
@@ -29,6 +32,6 @@ double Functions::conservation(double m1, double m2, double v1, double v2){
 	}
 }
 
-double Functions::periode(double T, double L){
-	T = 2*PI*sqrt(L/g)	;
+double Functions::periode(double L){
+	return 2*PI*sqrt(L/g)	;
 }

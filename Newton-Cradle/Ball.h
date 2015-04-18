@@ -1,6 +1,7 @@
 #ifndef BALL_H
 #define BALL_H
 
+#include <iostream>
 #include <fstream>
 #include "Functions.h" // Base class: Functions
 
@@ -16,7 +17,7 @@ public:
 	double getMass();
 	double getVel();
 	double getPos();
-	void print();
+	void print(ofstream&);
 	~Ball();
 private:
 	double v;
@@ -29,7 +30,6 @@ private:
 	double pos;
 	double posX;
 	double posY;
-	ofstream fout;
 };
 
 }
