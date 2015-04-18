@@ -4,6 +4,7 @@
 class Functions
 {
 public:
+	Functions();
 	double posisi(double, double, double);
 	double velocityAng(double);
 	double velocityLin(double, double);

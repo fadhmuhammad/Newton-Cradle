@@ -6,7 +6,7 @@
 namespace std
 {
 
-Ball::Ball(double amp_)
+Ball::Ball(double amp_, int i)
 {
 	L = 5.0;
 	m = 1.0;
@@ -15,28 +15,33 @@ Ball::Ball(double amp_)
 	pos = 0.0;
 	posX = 0.0;
 	posY = 0.0;
-	ofstream fout;
+	x0 = (i-1)*0.3;
 	w = velocityAng(L);
 	v = velocityLin(w, L);
 	T = periode(L);
+	
+	char ifn[] = "databola-1.txt";
+	ifn[9] = '0' + i;
+	fout.open(ifn);
+	fout << "#x\ty" << endl;
 }
 
-void Ball::swing()
+void Ball::swing(double t)
 {
-	ofstream fout;
-	fout.open("data.txt");
-	fout << "#x\ty" << endl;
-	double t = 0.0;
-	while (t < T){
+	if (!isCollide()){
 		pos = posisi(amp, w, t);
 		posX = L*sin(pos);
 		posY = L*cos(pos);
-		cout << posX << "\t" << -posY << endl;
-		fout << posX << "\t" << -posY << endl;
-		t += 0.1;
+	} else if (isCollide()){
+		
 	}
+	cout << posX+x0 << "\t" << -posY << endl;
+	fout << posX+x0 << "\t" << -posY << endl;
 }
 
+bool Ball::isCollide(){
+	return false;
+}
 void Ball::collide()
 {
 	
@@ -52,7 +57,7 @@ double Ball::getVel()
 }
 double Ball::getPos()
 {
-	return pos;
+	return posX;
 }
 Ball::~Ball()
 {

@@ -2,7 +2,9 @@
 #include "Functions.h"
 #define g 9.8
 #define PI 3.14
-
+Functions::Functions(){
+	
+}
 double Functions::posisi(double amp, double w, double t){
 	return amp*sin(w*t);
 }

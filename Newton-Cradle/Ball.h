@@ -11,9 +11,10 @@ namespace std
 class Ball : public Functions
 {
 public:
-	Ball(double);
-	void swing();
+	Ball(double, int);
+	void swing(double);
 	void collide();
+	bool isCollide();
 	double getMass();
 	double getVel();
 	double getPos();
@@ -25,12 +26,13 @@ private:
 	double L;
 	double r;
 	double T;
+	double x0;
 	double amp;
 	double pos;
 	double posX;
 	double posY;
 	int xGrid;
-
+	ofstream fout;
 };
 
 }
