@@ -15,6 +15,7 @@ public:
 	void collide();
 	double getMass();
 	double getVel();
+	double getPos();
 	void print();
 	~Ball();
 private:
