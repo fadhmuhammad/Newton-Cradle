@@ -5,42 +5,47 @@
 
 namespace std
 {
-
+Ball::Ball(){
+	
+}
 Ball::Ball(double amp_, int i)
 {
 	L = 5.0;
 	m = 1.0;
-	r = 0.0;
+	r = 0.2;
 	amp = amp_;
 	pos = 0.0;
 	posX = 0.0;
 	posY = 0.0;
-	x0 = (i-1)*0.3;
-	w = velocityAng(L);
+	x0 = (i-1)*(2*r);
+	v = 0.0;
+	w = velocityAng(v, L);
 	v = velocityLin(w, L);
 	T = periode(L);
 	
 	char ifn[] = "databola-1.txt";
 	ifn[9] = '0' + i;
 	fout.open(ifn);
-	fout << "#x\ty" << endl;
+	fout << "#x\ty\tr" << endl;
 }
 
-void Ball::swing(double t)
+void Ball::swing(double t, double d)
 {
-	if (!isCollide()){
+	if (!isCollide(d)){
 		pos = posisi(amp, w, t);
 		posX = L*sin(pos);
 		posY = L*cos(pos);
-	} else if (isCollide()){
+	} else if (isCollide(d)){
 		
 	}
-	cout << posX+x0 << "\t" << -posY << endl;
-	fout << posX+x0 << "\t" << -posY << endl;
+	fout << posX+x0 << "\t" << -posY << "\t" << r << endl;
 }
 
-bool Ball::isCollide(){
-	return false;
+bool Ball::isCollide(double d){
+	if (d < 2*r)
+		return true;
+	else
+		return false;
 }
 void Ball::collide()
 {
@@ -55,10 +60,16 @@ double Ball::getVel()
 {
 	return v;
 }
-double Ball::getPos()
+double Ball::getPosX()
 {
 	return posX;
 }
+
+double Ball::getPosY()
+{
+	return posY;
+}
+
 Ball::~Ball()
 {
 }

@@ -9,8 +9,11 @@ double Functions::posisi(double amp, double w, double t){
 	return amp*sin(w*t);
 }
 
-double Functions::velocityAng(double L){
-	return sqrt(g/L);
+double Functions::velocityAng(double v, double L){
+	if (v)
+		return v/L;
+	else
+		return sqrt(g/L);
 }
 
 double Functions::velocityLin(double w, double L){

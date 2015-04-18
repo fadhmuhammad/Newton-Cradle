@@ -10,14 +10,16 @@ namespace std
 
 class Ball : public Functions
 {
-public:
+	public:
+	Ball();
 	Ball(double, int);
-	void swing(double);
+	void swing(double, double);
 	void collide();
-	bool isCollide();
+	bool isCollide(double);
 	double getMass();
 	double getVel();
-	double getPos();
+	double getPosX();
+	double getPosY();
 	~Ball();
 private:
 	double v;
