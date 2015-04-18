@@ -4,14 +4,15 @@
 namespace std
 {
 
-Ball::Ball()
+Ball::Ball(double amp_)
 {
 	w = 0.0;
 	v = 0.0;
 	L = 0.0;
 	m = 0.0;
 	r = 0.0;
-	amp = 0.0;
+	T = 0.0;
+	amp = amp_;
 	pos = 0.0;
 	posX = 0.0;
 	posY = 0.0;
@@ -29,10 +30,11 @@ void Ball::swing()
 		posisi(pos, amp, w, t);
 		posX = L*cos(pos);
 		posY = L*sin(pos);
+		print();
 	}
 }
 void Ball::print(){
-	
+	fout << posX << "\t" << posY << endl;
 }
 
 void Ball::collide()

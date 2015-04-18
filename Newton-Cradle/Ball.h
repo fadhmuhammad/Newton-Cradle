@@ -10,7 +10,7 @@ namespace std
 class Ball : public Functions
 {
 public:
-	Ball();
+	Ball(double);
 	void swing();
 	void collide();
 	double getMass();
